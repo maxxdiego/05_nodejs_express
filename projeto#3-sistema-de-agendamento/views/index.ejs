@@ -1,0 +1,24 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+    <div class="calendar-header">
+        <img src="/images/calendar.png" class="img-icon">
+        <h1>&nbsp;Calendário</h1>
+        <hr>
+    </div>
+    <div id="calendar" class="calendar">
+
+    </div>
+<script src="fullcalendar/dist/index.global.js"></script>
+<script>
+    var element = document.getElementById('calendar')
+    var calendar = new FullCalendar.Calendar(element, {
+        initialView: 'dayGridMonth',
+        locale: 'pt-br',
+        events: 'getcalendar',
+        eventClick: function(info){
+            window.location.href = `/event/${info.event.id}`
+        }
+    })
+    calendar.render()
+</script>
+<%- include ('partials/footer.ejs') %>

@@ -1,0 +1,56 @@
+            <%- include ('partials/header.ejs') %>
+            <%- include ('partials/navbar.ejs') %>
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>Cadastrar cliente</h1>
+                        <hr>
+                        <form method="POST" action="createClient">
+                            <label>Nome do cliente:</label>
+                            <input type="text" name="name" id="name" placeholder="Insira o nome do cliente" class="form-control">
+                                            
+                            <label>CPF do cliente:</label>
+                            <input type="text" name="cpf" id="cpf" placeholder="Insira o CPF do cliente" class="form-control cpf">
+                            
+                            <label>Endereço do cliente:</label>
+                            <input type="text" name="address" id="address" placeholder="Insira o endereço do cliente" class="form-control">
+                            <br>
+                            <button class="btn btn-success">Cadastrar</button>
+                        </form>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Clientes</h1>
+        </div>
+        <div class="card-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome:</th>
+                        <th>CPF:</th>
+                        <th>Endereço:</th>
+                        <th colspan="2" style="text-align: center;">Ações:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% clients.forEach(client => { %>
+                     <tr>
+                        <td><%= client.name %></td>
+                        <td><%= client.cpf %></td>
+                        <td><%= client.address %></td>
+                        <td><a href="/deleteClient/<%= client._id %>"><img src="/imgs/delete.png" alt="Apagar"></a></td>
+                        <td><a href="/findClient/<%= client._id %>"><img src="/imgs/edit.png" alt="Editar"></a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer.ejs') %>

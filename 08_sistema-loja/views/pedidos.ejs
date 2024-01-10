@@ -1,0 +1,53 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Cadastrar Pedido</h1>
+            <hr>
+            <form method="POST" action="createPedido">
+                <label>Numero do Pedido:</label>
+                <input type="text" name="numero" id="numero" placeholder="Insira o Numero do Pedido" class="form-control">
+                                
+                <label>Valor do Pedido:</label>
+                <input type="text" name="valor" id="valor" placeholder="Insira o Valor do Pedido" class="form-control cpf">
+                
+                <br>
+                <button class="btn btn-success">Cadastrar</button>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Pedidos</h1>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Número:</th>
+                            <th>Valor:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% pedidos.forEach(pedido => { %>
+                        <tr>
+                            <td><%= pedido.numero %></td>
+                            <td><%= pedido.valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></td>
+                            <td><a href="/deletePedidos/<%= pedido._id %>"><img src="/imgs/delete.png" alt="Apagar"></a></td>
+                        <td><a href="/findPedidos/<%= pedido._id %>"><img src="/imgs/edit.png" alt="Editar"></a></td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <%- include ('partials/footer.ejs') %>

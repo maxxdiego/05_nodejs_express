@@ -1,0 +1,43 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    <div class="container">
+        <br>
+        <h1>Pergunta #<%= pergunta.id %>: <%= pergunta.titulo %></h1>
+        <br>
+        <p><%= pergunta.descricao %></p>
+        <a href="/alterar/<%= pergunta.id %>"><button type="submit" class="btn btn-dark" id="btn-small">Alterar pergunta</button></a>
+        <a href="/apagar/<%= pergunta.id %>"><button type="submit" class="btn btn-danger" id="btn-small">Apagar</button></a>
+        <hr>
+        <br>
+        <form method="POST" action="/responder">
+            <h3>Você tem a resposta?</h3>
+            <br>
+            <label>Resposta:</label>
+            <textarea placeholder="Insira aqui sua resposta..." class="form-control" name="corpo"></textarea>
+            <br>
+            <input type="hidden" name="pergunta" value="<%= pergunta.id %>">
+            <button type="submit" class="btn btn-success">Responder</button>
+            <br>
+        </form>
+        <hr>
+        <br>
+        <h3>O que já responderam:</h3>
+        <br>
+        <% if(respostas.length == 0){ %>
+            <p><em>Ainda não há repostas para essa pergunta.</em></p><br>
+        <%} else { %>
+            <% respostas.forEach(resposta => { %>
+            <img src="/img/avatar.png" id="avatar">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Anônimo:</h5>
+                    <%= resposta.corpo %>
+                </div>
+            </div>
+            <br>
+            <% }) %>
+        <%} %>
+    </div>
+</body>
+<%- include ('partials/footer.ejs') %>

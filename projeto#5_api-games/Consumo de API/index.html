@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Login</h2>
+    <label for="email">E-mail:</label><br>
+    <input type="email" name="email" id="email" placeholder="email@email.com"><br>
+    <label for="password">Senha:</label><br>
+    <input type="password" name="password" id="password" placeholder="Insira sua senha"><br><br>
+    <input type="button" value="Entrar" onclick="login()"><br><br>
+    <input type="button" value="Logout" onclick="logout()"><br><br>
+    <hr>
+    <h2>Lista de games</h2>
+    <ul id="games"></ul>
+    <hr>
+    <h2>Novo Game</h2>
+    <form>
+        <label for="title">Título:</label><br>
+        <input type="text" name="title" id="title" placeholder="Insira o título"><br>
+        <label for="year">Ano:</label><br>
+        <input type="number" name="year" id="year" placeholder="Insira o ano"><br>
+        <label for="price">Preço:</label><br>
+        <input type="number" name="price" id="price" placeholder="Insira o preço"><br><br>
+        <input type="submit" value="Cadastrar" id="createBtn"><br>
+    </form>
+    <hr>
+    <h2>Editar Game</h2>
+    <form>
+        <input type="text" name="idEdit" id="idEdit" placeholder="ID" readonly><br>
+        <label for="title">Título:</label><br>
+        <input type="text" name="titleEdit" id="titleEdit" placeholder="Insira o novo título"><br>
+        <label for="year">Ano:</label><br>
+        <input type="number" name="yearEdit" id="yearEdit" placeholder="Insira o novo ano"><br>
+        <label for="price">Preço:</label><br>
+        <input type="number" name="priceEdit" id="priceEdit" placeholder="Insira o novo preço"><br><br>
+        <input type="submit" value="Editar" id="updateBtn"><br>
+    </form>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<script src="js.js"></script>
+</html>

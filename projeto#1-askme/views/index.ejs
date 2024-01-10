@@ -1,0 +1,31 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    <div class="container">
+        <br>
+        <h2>É só chegar e perguntar! Aproveite!</h2>
+        <br>
+        <a href="/perguntar" class="btn btn-success">Fazer pergunta</a>
+        <hr>
+        <br>
+        <h5>Últimas perguntas no AskMe:</h5>
+
+        <% perguntas.forEach(pergunta => { %>
+            <br>
+            <img src="/img/avatar.png" id="avatar">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <h6>Pergunta #<%= pergunta.id %> - <%= pergunta.titulo %></h6>
+                </div>
+
+                <div class="card-footer">
+                    <a href="/pergunta/<%= pergunta.id %>"><button class="btn btn-success">Responder</button></a>
+                </div>
+
+            </div>
+        <% }) %>
+        <br>
+    </div>
+</body>
+<%- include ('partials/footer.ejs') %>

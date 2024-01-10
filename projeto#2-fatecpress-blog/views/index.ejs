@@ -1,0 +1,36 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/homenavbar.ejs') %>
+
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Bem-vindo ao Fatecpress!</h1>
+        <p class="lead">Este é um simples blog desenvolvido como material de estudo na Fatec Registro.</p>
+        <hr class="my-4">
+        <p>Ele usa classes utilitárias para tipografia e espaçamento de conteúdo, dentro do maior container.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a>
+      </div>
+    <hr>
+    <% articles.forEach(article => { %>
+        <div class="card">
+            <div class="card-header">
+                <h2><%= article.title %></h2>
+            </div>
+            <div class="card-body">
+                <a href="/<%= article.slug %>" class="btn btn-success">Ler artigo</a>
+            </div>
+        </div>
+        <br>
+    <% }) %>
+
+    <div class="row">
+        <div class="col col-12">
+        <a href="/articles/page/2" style="float: right;">Próximo >></a>
+        </div>
+        <hr>
+    </div>
+    <hr>
+</div>
+</body>
+
+<%- include ('partials/footer.ejs') %>

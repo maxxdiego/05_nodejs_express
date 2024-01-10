@@ -1,0 +1,42 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+<div class="container">
+        <br>
+        <div class="card">
+            <div class="card-header">
+                <img src="/images/calendar.png" class="img-icon">
+                <h1>&nbsp;Agendar consulta</h1>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="create">
+                    <label>Nome do paciente:</label>
+                    <input type="text" name="name" id="name" placeholder="Insira o nome do paciente" class="form-control">
+                    
+                    <label>E-mail do paciente:</label>
+                    <input type="email" name="email" id="email" placeholder="Insira o e-mail do paciente (email@email.com)" class="form-control">
+                    
+                    <label>CPF do paciente:</label>
+                    <input type="text" name="cpf" id="cpf" placeholder="Insira o CPF do paciente" class="form-control cpf">
+                    
+                    <label>Descrição da consulta:</label>
+                    <input type="text" name="description" id="Descrição" placeholder="Insira informações da consulta" class="form-control">
+                    
+                    <label>Data da consulta:</label>
+                    <input type="date" name="date" id="date" class="form-control">
+                    
+                    <label>Horário da consulta:</label>
+                    <input type="time" name="time" id="time" class="form-control">
+                    <br>
+                    <button class="btn">Agendar</button>
+                </form>
+                <hr>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="jquery-mask/jquery.mask.min.js"></script>
+<script>
+    $('.cpf').mask('000.000.000-00')
+</script>
+<%- include ('partials/footer.ejs') %>

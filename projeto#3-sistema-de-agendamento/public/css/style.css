@@ -1,0 +1,76 @@
+label {
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+.btn {
+    background-color: #2C3E50; 
+    color: #f1f1f1;
+}
+
+.btn:hover {
+    background-color: #E74C3C; 
+    color: #f1f1f1;
+}
+
+.open {
+    width: 85px;
+    height: 30px;
+    font-size: 0.8rem;
+}
+
+.navbar {
+    background-color: #2C3E50; 
+    padding: 10px;
+}
+
+.list {
+    font-size: 18pt;
+}
+
+footer {
+    text-align: center;
+    color: #2C3E50;
+}
+
+.calendar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px
+}
+
+.calendar a {
+    text-decoration: none;
+    color: #2C3E50;
+}
+
+.calendar-header {
+    padding: 30px;
+    color: #2C3E50;
+}
+
+.card-body {
+    color: #2C3E50;
+    font-size: 0.9rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2C3E50;
+}
+
+.img-icon {
+    float: left;
+    max-width: 55px;
+    max-height: 55px;
+}
+
+a {
+    text-decoration: none;
+    color: #2C3E50;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #E74C3C;
+}

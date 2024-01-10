@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const endpoint = 'http://localhost:8080/getcalendar'
+    
+    async function pegarDados() {
+        const res = await fetch(endpoint)
+        const dados = await res.json()
+        return dados
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        let dados = []
+
+        try {
+        dados = await pegarDados()
+        }catch(err) {
+        console.log("Erro!")
+        console.log(err)
+        }
+        
+        dados.forEach(show => {
+            document.write(`ID: ${show.id}`)
+            document.write(`<br>Título: ${show.title}<br><br>`)
+        })        
+    })
+
+</script>
+</html>

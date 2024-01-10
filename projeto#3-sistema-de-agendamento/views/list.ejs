@@ -1,0 +1,33 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <img src="/images/calendar.png" class="img-icon">
+            <h1>&nbsp;Consultas: </h1>
+            <hr>
+            <form action="/searchresult" method="get">
+                Buscar consultas:
+                <input type="search" name="search" id="search" placeholder="Digite o nome completo, e-mail ou CPF" class="form-control">
+                <br>
+                <input type="submit" value="Buscar" class="btn">
+            </form>
+            <hr>
+        </div>
+        <div class="card-body list">
+            <% appos.forEach(appo => { %>
+            
+            <h6><strong>Consulta: <%= appo.description %></strong></h6>
+            <span>Paciente: <%= appo.name %><br></span>
+            <span>Email: <%= appo.email %><br></span>
+            <span>Data: <strong><%= appo.date.getDate()+1%>/<%= appo.date.getMonth()+1%>/<%= appo.date.getFullYear()%></strong><br></span>
+            <span>Horário: <strong><%= appo.time %></strong></span>
+            <br><br>
+            <a href="/event/<%= appo.id %>"><input type="button" value="Visualizar" class="btn open"></a>
+            <hr>
+            
+            <% }) %>
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer.ejs') %>

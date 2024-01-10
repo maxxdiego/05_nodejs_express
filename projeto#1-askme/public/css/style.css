@@ -1,0 +1,17 @@
+body {
+    background-color: #eceff1;
+}
+
+#form-pergunta {
+    margin-top: 5vh;
+}
+
+#avatar {
+    float: left ;
+    padding-right: 15px;
+    padding-top: 30px;
+}
+
+#btn-small {
+    font-size: 8pt;
+}

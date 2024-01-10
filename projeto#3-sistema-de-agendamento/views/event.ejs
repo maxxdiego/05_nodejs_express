@@ -1,0 +1,25 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <img src="/images/calendar.png" class="img-icon">
+            <h2>&nbsp;Consulta: <%= appo.description %></h2>
+        </div>
+        <div class="card-body">
+            <span>Paciente: <strong><%= appo.name %></strong><br></span>
+            <span>Email: <%= appo.email %><br></span>
+            <span>CPF: <%= appo.cpf %><br></span>
+            <span>Data: <strong><%= appo.date.getDate()+1%>/<%= appo.date.getMonth()+1%>/<%= appo.date.getFullYear()%></strong><br></span>
+            <span>Horário: <strong><%= appo.time %></strong></span>
+            <hr>
+            <% if(!appo.finished){ %>
+            <form method="post" action="/finish">
+                <input type="hidden" name="id" value="<%= appo._id %>">
+                <input type="submit" value="Finalizar consulta" class="btn">
+            </form>
+            <% } %>
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer.ejs') %>

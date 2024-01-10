@@ -1,0 +1,56 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Cadastrar Produto</h1>
+            <hr>
+            <form method="POST" action="createProdutos">
+                <label>Nome do produto:</label>
+                <input type="text" name="nome" id="nome" placeholder="Insira o nome do produto" class="form-control">
+                                
+                <label>Preço do produto:</label>
+                <input type="text" name="preco" id="preco" placeholder="Insira o Preço do produto" class="form-control cpf">
+                
+                <label>Categoria do produto:</label>
+                <input type="text" name="categoria" id="categoria" placeholder="Insira a Categoria do produto" class="form-control">
+                <br>
+                <button class="btn btn-success">Cadastrar</button>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+<br>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Produtos</h1>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome:</th>
+                            <th>Preço:</th>
+                            <th>Categoria:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% produtos.forEach(produtos => { %>
+                        <tr>
+                            <td><%= produtos.nome %></td>
+                            <td><%= produtos.preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) %></td>
+                            <td><%= produtos.categoria %></td>
+                            <td><a href="/deleteProdutos/<%= produtos._id %>"><img src="/imgs/delete.png" alt="Apagar"></a></td>
+                        <td><a href="/findProdutos/<%= produtos._id %>"><img src="/imgs/edit.png" alt="Editar"></a></td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <%- include ('partials/footer.ejs') %>
