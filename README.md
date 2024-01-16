@@ -2,4 +2,4 @@
 :warning: **Este material ainda está em desenvolvimento!**
 
 &nbsp;
-*Materiais de estudo Node.js*
+*Materiais de estudo Node.js.*
