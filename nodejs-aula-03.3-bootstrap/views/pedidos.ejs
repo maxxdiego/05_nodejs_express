@@ -1,0 +1,31 @@
+<%- include ('partials/navbar.ejs') %>
+<%- include ('partials/header.ejs') %>
+
+    <h1>Pedidos</h1>
+    <%# Comentário no EJS %>
+    <!-- <%#= pedidos %> Objetos - Necessário tratar com o forEach -->
+
+    <h4>forEach sem tabela:</h4>
+
+    <% pedidos.forEach(function(pedido){ %>
+        Produto: <%= pedido.produto %> <br>
+        Preço: <%= pedido.preco %> <br><br>
+    <% }) %>
+
+    
+    <h4>forEach com tabela:</h4>
+
+    <table border="1">
+        <tr>
+            <th width="150px">Produto:</th>
+            <th>Preço:</th>
+        </tr>
+        <tr>
+        <% pedidos.forEach(function(pedido){ %>
+            <td><%= pedido.produto %></td>
+            <td><%= pedido.preco %></td>
+        </tr>
+        <% }) %>
+    </table>
+
+<%- include ('partials/footer.ejs') %>

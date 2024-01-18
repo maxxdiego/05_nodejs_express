@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+</head>
+<body>
+    <h1>Pedidos</h1>
+    <%# Comentário no EJS %>
+    <!-- <%#= pedidos %> Objetos - Necessário tratar com o forEach -->
+
+    <h4>forEach sem tabela:</h4>
+
+    <% pedidos.forEach(function(pedido){ %>
+        Produto: <%= pedido.produto %> <br>
+        Preço: <%= pedido.preco %> <br><br>
+    <% }) %>
+
+    
+    <h4>forEach com tabela:</h4>
+
+    <table border="1">
+        <tr>
+            <th width="150px">Produto:</th>
+            <th>Preço:</th>
+        </tr>
+        <tr>
+        <% pedidos.forEach(function(pedido){ %>
+            <td><%= pedido.produto %></td>
+            <td><%= pedido.preco %></td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

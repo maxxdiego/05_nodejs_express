@@ -1,0 +1,15 @@
+# Para corrigir o erro mostrado ao tentar instalar o Nodemon
+
+- Executar comando no Power Shell:
+Set-ExecutionPolicy RemoteSigned
+
+(Para entrar no Power Shell, digite: powershell no prompt de comando)
+
+
+
+
+--------------------
+
+Fonte: 
+
+https://pt.stackoverflow.com/questions/220078/o-que-significa-o-erro-execu%C3%A7%C3%A3o-de-scripts-foi-desabilitada-neste-sistema

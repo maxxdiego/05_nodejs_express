@@ -1,0 +1,12 @@
+<%- include ('partials/navbar.ejs') %>
+<%- include ('partials/header.ejs') %>
+
+    <h1>Produtos</h1>
+
+    <%= produto %>
+
+    <% if (!produto) { %>
+        <p><%= produtos %></p>
+    <% } %>
+
+<%- include ('partials/footer.ejs') %>

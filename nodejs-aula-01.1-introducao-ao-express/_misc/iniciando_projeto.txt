@@ -1,0 +1,15 @@
+Comandos do Terminal (npm)
+
+# Verificar a versão do NPM:
+npm -v
+
+# Iniciar um projeto node:
+npm init -y
+
+# Instalar a biblioteca Express:
+npm install express
+
+# Criar o arquivo principal do projeto 'index.js'
+
+# Para rodar o projeto:
+node index.js

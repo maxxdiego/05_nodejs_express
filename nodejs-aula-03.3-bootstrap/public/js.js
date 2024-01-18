@@ -1,0 +1,1 @@
+// window.alert('Arquivos estáticos importados com sucesso!')
