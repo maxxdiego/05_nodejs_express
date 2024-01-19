@@ -11,4 +11,14 @@ router.get("/clientes", (req, res) => {
     })
   })
 
+// ROTA DE CADASTRO DE CLIENTES
+router.post("/clientes/new", (req, res) => {
+  ClienteService.Create(
+    req.body.nome, 
+    req.body.cpf, 
+    req.body.endereco
+    )
+  res.redirect("/clientes");
+})
+
 export default router //exportando o módulo "router"

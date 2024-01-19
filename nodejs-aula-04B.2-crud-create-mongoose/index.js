@@ -9,6 +9,10 @@ import ClientesController from "./controllers/ClientesController.js"
 import PedidosController from "./controllers/PedidosController.js"
 import ProdutosController from "./controllers/ProdutosController.js"
 
+// Permite receber dados vindo de formulários
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+
 // Iniciando conexão com o banco de dados do MongoDB
 mongoose.connect("mongodb://127.0.0.1:27017/loja")
 

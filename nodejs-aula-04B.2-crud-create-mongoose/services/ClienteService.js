@@ -9,6 +9,16 @@ class ClienteService {
         const clientes = Cliente.find()
         return clientes
     }
+
+    // Método para CADASTRAR um Cliente
+    Create(nome, cpf, endereco) {
+        const novoCliente = new Cliente({
+            nome: nome,
+            cpf: cpf,
+            endereco: endereco
+        })
+        novoCliente.save()
+    }
 }
 
 export default new ClienteService()

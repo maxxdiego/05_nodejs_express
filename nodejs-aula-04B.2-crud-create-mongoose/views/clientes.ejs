@@ -5,16 +5,15 @@
     <div class="card">
         <div class="card-header">
             <h1>Cadastrar cliente</h1>
-            <hr>
-            <form method="POST" action="createClient">
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/clientes/new">
                 <label>Nome do cliente:</label>
-                <input type="text" name="name" id="name" placeholder="Insira o nome do cliente" class="form-control">
-                                
+                <input type="text" name="nome" id="nome" placeholder="Insira o nome do cliente" class="form-control" required>     
                 <label>CPF do cliente:</label>
-                <input type="text" name="cpf" id="cpf" placeholder="Insira o CPF do cliente" class="form-control cpf">
-                
+                <input type="text" name="cpf" id="cpf" placeholder="Insira o CPF do cliente" class="form-control" required>
                 <label>Endereço do cliente:</label>
-                <input type="text" name="address" id="address" placeholder="Insira o endereço do cliente" class="form-control">
+                <input type="text" name="endereco" id="endereco" placeholder="Insira o endereço do cliente" class="form-control" required>
                 <br>
                 <button class="btn btn-success">Cadastrar</button>
             </form>
