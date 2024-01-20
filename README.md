@@ -4,9 +4,6 @@
 
 :warning: Ainda em construção. :construction:
 
-
-
-
 ## Como executar
 
 1 - Instalar os módulos através do npm. Com a pasta do projeto aberta no terminal, rodar o comando:
@@ -20,9 +17,6 @@ npm install
 npm start
 
 ```
-
-
-
 
 # Autor
 
