@@ -152,6 +152,6 @@ app.post("/alterarpergunta",(req, res) => {
 })
 
 //Inicia o servidor na porta 4000
-app.listen(4000,()=>{
+app.listen(8080,()=>{
     console.log("Servidor iniciado...")
 })
