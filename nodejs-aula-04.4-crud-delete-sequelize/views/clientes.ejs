@@ -37,7 +37,7 @@
                         <th>Nome:</th>
                         <th>CPF:</th>
                         <th>Endereço:</th>
-                        <th colspan="2">Ações:</th>
+                        <th style="text-align: center;" colspan="2">Ações:</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,7 +47,7 @@
                         <td><%= cliente.cpf %></td>
                         <td><%= cliente.endereco %></td>
                         <td><a style="color: orange;" href="#">Editar</a></td>
-                        <td><a style="color: red;" href="/clientes/delete/<%= cliente.id %>">Excluir</a></td>
+                        <td><a style="color: red;" href="/clientes/delete/<%= cliente.id %>" onclick="return confirm('Deseja mesmo excluir o cliente <%= cliente.nome %>?')">Excluir</a></td>
                     </tr>
                     <% }) %>
                 </tbody>
