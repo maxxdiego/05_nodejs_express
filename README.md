@@ -6,16 +6,6 @@
 
 ## Como executar
 
-Pré-requisitos: 
-- Visual Studio Code
-- GIT
-
-```bash
-# clonar repositório
-git clone https://github.com/maxxdiego/04_nodejs.git
-
-```
-
 1 - Instalar os módulos através do npm. Com a pasta do projeto aberta no terminal, rodar o comando:
 ```bash
 npm install
