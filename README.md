@@ -4,7 +4,7 @@
 
 :warning: Ainda em construção. :construction:
 
-
+<br>
 ## Como executar
 
 1 - Instalar os módulos através do npm. Com a pasta do projeto aberta no terminal, rodar o comando:
@@ -19,7 +19,7 @@ npm start
 
 ```
 
-
+<br>
 # Autor
 
 Prof. Diego Max da Silva<br>
