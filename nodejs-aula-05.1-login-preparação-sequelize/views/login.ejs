@@ -1,0 +1,24 @@
+<%- include ('partials/navbar.ejs') %>
+<%- include ('partials/header.ejs') %>
+
+<div class="container col-4">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Login de administrador</h2>
+        </div>
+        <div class="card-body m-auto">
+            <p style="color:red; font-size: 0.7em;">Você precisa estar logado para acessar os recursos do painel.</p>
+            <form action="/authenticate" method="post">
+                <label for="email">E-mail:</label>
+                <input class="form-control" name="email" type="email" placeholder="email@exemplo.com" required><br>
+                <label for="password">Senha:</label>
+                <input class="form-control" name="password" type="password" placeholder="Insira sua senha" required><br>
+                <button type="submit" class="btn btn-success btn-block">Entrar</button>
+            </form>
+            <hr>
+            <h6>Não possui conta? <a href="/cadastro">Cadastre-se</a></h6>
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/footer.ejs') %>
