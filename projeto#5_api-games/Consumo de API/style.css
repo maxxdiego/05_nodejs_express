@@ -1,3 +1,12 @@
+main {
+    background-color: #212529;
+}
+
 li {
-    line-height: 9px;
+    line-height: 6px;
+}
+
+.title {
+    color: #f1f1f1;
+    text-align: center;
 }

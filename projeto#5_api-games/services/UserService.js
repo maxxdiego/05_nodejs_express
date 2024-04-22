@@ -44,4 +44,31 @@ class UserService {
     }
 }
 
+// Função para criar a coleção e inserir um registro de usuário padrão
+async function criarColecaoEInserirRegistroPadrao() {
+    try {
+        // Verifica se a coleção já existe
+        const existeColecao = await User.exists();
+        
+        if (!existeColecao) {
+            // Cria um novo usuário padrão
+            const novoUsuario = new User({
+                name: 'Admin',
+                email: 'admin@email.com',
+                password: 'admin'
+            });
+
+            // Salva o novo usuário no banco de dados
+            await novoUsuario.save();
+            
+            console.log('Registro de usuário padrão inserido com sucesso!');
+        }
+    } catch (error) {
+        console.error('Erro ao criar coleção e inserir registro de usuário padrão:', error);
+    } 
+}
+
+// Chama a função para criar a coleção e inserir o registro padrão
+criarColecaoEInserirRegistroPadrao();
+
 export default new UserService()

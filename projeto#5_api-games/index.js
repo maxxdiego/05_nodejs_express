@@ -8,6 +8,7 @@ import jwt from 'jsonwebtoken'
 const app = express()
 const JWTSecret = 'apigamessecret'
 
+// Função de Autenticação (JWT - Json Web Token)
 function Auth(req, res, next) {
     const authToken = req.headers['authorization']
     if(authToken != undefined){
@@ -32,6 +33,7 @@ function Auth(req, res, next) {
     }
 }
 
+// Configurações do Express
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(cors())
@@ -43,7 +45,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/games")
 app.get("/games", Auth, (req,res) => {
     res.statusCode = 200 //Requisição feita com sucesso
     GameService.GetAll().then(games => {
-        res.json({games: games, _links: HATEOAS})
+        res.json({games: games})
     })
 })
 
@@ -52,33 +54,10 @@ app.get("/game/:id", Auth, (req,res) => {
     if(ObjectId.isValid(req.params.id)){
         const id = req.params.id
 
-        var HATEOAS = [
-            {
-                href: "http://localhost:4000/game/"+id,
-                method: "GET",
-                rel: "get_game"
-            },
-            {
-                href: "http://localhost:4000/game/"+id,
-                method: "DELETE",
-                rel: "delete_game"
-            },
-            {
-                href: "http://localhost:4000/game/"+id,
-                method: "PUT",
-                rel: "edit_game"
-            },
-            {
-                href: "http://localhost:4000/games",
-                method: "GET",
-                rel: "get_all_games"
-            }
-        ]
-
         GameService.GetOne(id).then(game => {
             if(game != undefined){
                 res.statusCode = 200
-                res.json({game: game, _links: HATEOAS})
+                res.json({game: game})
             }else{
                 res.sendStatus(404)
             }
@@ -118,6 +97,7 @@ app.put("/game/:id", Auth, (req,res) => {
     }
 })
 
+// Endpoint de Login
 app.post("/auth", (req, res) => {
     const {email, password} = req.body
     if(email != undefined){
@@ -150,7 +130,8 @@ app.post("/auth", (req, res) => {
     }  
 })
 
-const port = 8080
+// Rodando a API na porta 4000
+const port = 4000
 app.listen(port,() => {
     console.log(`API rodando na porta ${port}.`)
 })

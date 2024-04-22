@@ -45,31 +45,3 @@ class GameService {
 }
 
 export default new GameService()
-
-
-/* async Create(name, cpf, adress) {
-    const newClient = new Client({
-        name,
-        cpf,
-        adress
-    })
-    try {
-        await newClient.save()
-        return true
-    }catch(err){
-        console.log(err)
-        return false
-    }
-}
-
-async GetAll() {
-    const clients = await Client.find()
-    return clients
-}
-
-
-async FindAll() {
-    const clients = await Client.find()
-    return clients
-} 
-*/
