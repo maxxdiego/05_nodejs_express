@@ -50,12 +50,12 @@
                 <div class="card-body">
                     <form>
                         <label for="title">Título:</label><br>
-                        <input type="text" name="title" id="title" placeholder="Insira o título" class="form-control"><br>
+                        <input type="text" name="title" id="title" placeholder="Insira o título" class="form-control" required><br>
                         <label for="year">Ano:</label><br>
-                        <input type="number" name="year" id="year" placeholder="Insira o ano" class="form-control"><br>
+                        <input type="number" name="year" id="year" placeholder="Insira o ano" class="form-control" required><br>
                         <label for="price">Preço:</label><br>
-                        <input type="number" name="price" id="price" placeholder="Insira o preço" class="form-control"><br>
-                        <input type="submit" value="Cadastrar" id="createBtn" class="btn btn-success"><br>
+                        <input type="number" name="price" id="price" placeholder="Insira o preço" class="form-control" required><br>
+                        <input type="submit" value="Cadastrar" id="createBtn" class="btn btn-success" required><br>
                     </form>
                 </div>
             </div>
@@ -69,14 +69,11 @@
                     <form>
                         <input type="text" name="idEdit" id="idEdit" placeholder="ID" class="form-control" readonly><br>
                         <label for="title">Título:</label><br>
-                        <input type="text" name="titleEdit" id="titleEdit" placeholder="Insira o novo título"
-                            class="form-control"><br>
+                        <input type="text" name="titleEdit" id="titleEdit" placeholder="Insira o novo título" class="form-control" required><br>
                         <label for="year">Ano:</label><br>
-                        <input type="number" name="yearEdit" id="yearEdit" placeholder="Insira o novo ano"
-                            class="form-control"><br>
+                        <input type="number" name="yearEdit" id="yearEdit" placeholder="Insira o novo ano" class="form-control" required><br>
                         <label for="price">Preço:</label><br>
-                        <input type="number" name="priceEdit" id="priceEdit" placeholder="Insira o novo preço"
-                            class="form-control"><br>
+                        <input type="number" name="priceEdit" id="priceEdit" placeholder="Insira o novo preço" class="form-control" required><br>
                         <input type="submit" value="Editar" id="updateBtn" class="btn btn-warning"><br>
                     </form>
                 </div>
