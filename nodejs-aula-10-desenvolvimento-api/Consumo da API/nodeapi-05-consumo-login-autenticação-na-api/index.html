@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Games - Consumo de API</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="yearnymous">
+</head>
+
+<body>
+    <main>
+        <h1 class="title">The Games</h1>
+        <hr>
+
+        <!-- CONTAINER -->
+        <div class="container col-md-6">
+
+            <!-- CARD LOGIN -->
+            <div class="container col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Login</h2>
+                    </div>
+                    <div class="card-body">
+                        <label for="email">E-mail:</label><br>
+                        <input type="email" name="email" id="email" placeholder="email@email.com"
+                            class="form-control"><br>
+                        <label for="password">Senha:</label><br>
+                        <input type="password" name="password" id="password" placeholder="Insira sua senha"
+                            class="form-control"><br>
+                        <input type="button" value="Entrar" onclick="login()" class="btn btn-success"><br><br>
+                        <input type="button" value="Logout" onclick="logout()" class="btn btn-dark"><br>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <!-- CARD LISTA DE GAMES  -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Lista de games</h2>
+                </div>
+                <div class="card-body">
+                    <ul id="games">
+
+                    </ul>
+                </div>
+            </div>
+            <hr>
+
+            <!-- CARD CADASTRO -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Novo Game</h2>
+                </div>
+                <div class="card-body">
+                    <form id="createForm">
+                        <label for="title">Título:</label><br>
+                        <input type="text" name="title" id="title" placeholder="Insira o título do jogo"
+                            class="form-control" required><br>
+                        <label for="year">Ano:</label><br>
+                        <input type="number" name="year" id="year" placeholder="Insira o ano do jogo"
+                            class="form-control" required><br>
+                        <label for="price">Preço:</label><br>
+                        <input type="text" name="price" id="price" placeholder="Insira o preço do jogo"
+                            class="form-control" required><br>
+                        <input type="submit" value="Cadastrar" id="createBtn" class="btn btn-success">
+                    </form>
+                </div>
+            </div>
+            <hr>
+
+            <!-- CARD EDIÇÃO -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Editar Game</h2>
+                </div>
+                <div class="card-body">
+                    <form id="editForm">
+                        <input type="text" name="idEdit" id="idEdit" placeholder="ID" class="form-control" readonly><br>
+                        <label for="title">Título:</label><br>
+                        <input type="text" name="titleEdit" id="titleEdit" placeholder="Insira o novo título"
+                            class="form-control" required><br>
+                        <label for="year">Ano:</label><br>
+                        <input type="number" name="yearEdit" id="yearEdit" placeholder="Insira o novo ano"
+                            class="form-control" required><br>
+                        <label for="price">Preço:</label><br>
+                        <input type="text" name="priceEdit" id="priceEdit" placeholder="Insira o novo preço"
+                            class="form-control" required><br>
+                        <input type="submit" value="Alterar" id="updateBtn" class="btn btn-warning">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="javascript/js.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="yearnymous"></script>
+
+</html>
