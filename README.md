@@ -15,7 +15,6 @@ npm install
 2 - Para rodar a aplicação:
 ```bash
 npm start
-
 ```
 No navegador acessar as aplicações através do localhost:8080.
 
