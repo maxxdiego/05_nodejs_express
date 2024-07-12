@@ -1,9 +1,9 @@
 ## Métodos de criação de relacionamentos do Sequelize:
 
-hasOne (tem um)
-belongsTo (pertence a)
-hasMany (tem muitos)
-belongsToMany (pertence a muitos)
+* hasOne (tem um)
+* belongsTo (pertence a)
+* hasMany (tem muitos)
+* belongsToMany (pertence a muitos)
 
 ### Criando o model de Endereços:
 
