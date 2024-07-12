@@ -1,0 +1,40 @@
+<%- include ('partials/header.ejs') %>
+    <%- include ('partials/navbar.ejs') %>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Alterar cliente</h1>
+                    <hr>
+                    <form method="POST" action="/clientes/update/<%= cliente.id %>">
+                        <label>Nome do cliente:</label>
+                        <input type="text" name="nome" id="nome" value="<%= cliente.nome %>" class="form-control"
+                            required>
+
+                        <label>CPF do cliente:</label>
+                        <input type="text" name="cpf" id="cpf" value="<%= cliente.cpf %>" class="form-control cpf"
+                            required>
+
+                        <label>Rua:</label>
+                        <input type="text" name="rua" id="rua" value="<%= cliente.endereco.rua %>" class="form-control"
+                            required>
+
+                        <label>Número:</label>
+                        <input type="text" name="numero" id="numero" value="<%= cliente.endereco.numero %>"
+                            class="form-control" required>
+
+                        <label>Bairro:</label>
+                        <input type="text" name="bairro" id="bairro" value="<%= cliente.endereco.bairro %>"
+                            class="form-control" required>
+                        <br>
+
+                        <input type="hidden" name="id" value="<%= cliente.id %>">
+                        <input type="hidden" name="id_endereco" value="<%= cliente.endereco.id %>">
+                        <input type="submit" class="btn btn-warning" value="Alterar"
+                            onclick="return confirm('Confirma as alterações realizadas para o cliente <%= cliente.nome %>?')">
+                    </form>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <br>
+        <%- include ('partials/footer.ejs') %>

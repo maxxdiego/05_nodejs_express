@@ -1,0 +1,69 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Cadastrar cliente</h1>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/clientes/new">
+                <label>Nome do cliente:</label>
+                <input type="text" name="nome" id="nome" placeholder="Insira o nome do cliente" class="form-control" required>
+                                
+                <label>CPF:</label>
+                <input type="text" name="cpf" id="cpf" placeholder="Insira o CPF do cliente" class="form-control" required>
+                
+                <label>Rua:</label>
+                <input type="text" name="rua" id="rua" placeholder="Insira a rua do endereço do cliente" class="form-control" required>
+
+                <label>Número:</label>
+                <input type="text" name="numero" id="numero" placeholder="Insira o número do endereço do cliente" class="form-control" required>
+
+                <label>Bairro:</label>
+                <input type="text" name="bairro" id="bairro" placeholder="Insira o bairro do endereço do cliente" class="form-control" required>
+                <br>
+                <button class="btn btn-success">Cadastrar</button>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Clientes</h1>
+        </div>
+        <div class="card-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome:</th>
+                        <th>CPF:</th>
+                        <th>Rua:</th>
+                        <th>Número:</th>
+                        <th>Bairro:</th>
+                        <th colspan="2">Ações:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% clientes.forEach(cliente => { %>
+                    <tr>
+                        <td><%= cliente.nome %></td>
+                        <td><%= cliente.cpf %></td>
+                        <td><%= cliente.endereco.rua %></td>
+                        <td><%= cliente.endereco.numero %></td>
+                        <td><%= cliente.endereco.bairro %></td>
+                        <td><a style="color: orange;" href="/clientes/edit/<%= cliente.id %>">Editar</a></td>
+                        <td><a style="color: red;" href="/clientes/delete/<%= cliente.id %>">Excluir</a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/footer.ejs') %>
