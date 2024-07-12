@@ -5,6 +5,8 @@
 * hasMany (tem muitos)
 * belongsToMany (pertence a muitos)
 
+<hr>
+
 ### Criando o model de Endereços:
 
 ```bash
