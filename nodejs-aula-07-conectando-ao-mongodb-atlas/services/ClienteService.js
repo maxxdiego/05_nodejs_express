@@ -11,11 +11,11 @@ class ClienteService {
     }
 
     // Método para CADASTRAR um Cliente
-    Create(nome, cpf, endereco) {
+    Create(nome, cpf, enderecos) {
         const novoCliente = new Cliente({
             nome : nome,
             cpf : cpf,
-            endereco : endereco
+            enderecos : enderecos
         })
         novoCliente.save()
     }
@@ -36,11 +36,11 @@ class ClienteService {
     }
 
     // Método para ALTERAR um cliente
-    Update(id, nome, cpf, endereco) {
+    Update(id, nome, cpf, enderecos) {
         Cliente.findByIdAndUpdate(id, {
             nome : nome,
             cpf : cpf,
-            endereco : endereco
+            enderecos : enderecos
         }).then(() => {
             console.log(`Dados do cliente com id: ${id} alterados com sucesso!`)
         }).catch(err => {

@@ -14,10 +14,16 @@ router.get("/clientes", Auth, function(req, res){
 
 // ROTA DE CADASTRO DE CLIENTES
 router.post("/clientes/new", Auth, (req, res) => {
+    const {nome, cpf, rua, numero, bairro} = req.body
+    const enderecos = [{
+        rua: rua,
+        numero: numero,
+        bairro: bairro
+    }]
     ClienteService.Create(
-        req.body.nome,
-        req.body.cpf,
-        req.body.endereco
+        nome,
+        cpf,
+        enderecos
     )
     res.redirect("/clientes")
 })
@@ -41,11 +47,17 @@ router.get("/clientes/edit/:id", Auth, (req, res) => {
 
 // ROTA DE ALTERAÇÃO DE CLIENTE
 router.post("/clientes/update/:id", Auth, (req, res) => {
+    const {id, nome, cpf, rua, numero, bairro} = req.body
+    const enderecos = [{
+        rua: rua,
+        numero: numero,
+        bairro: bairro
+    }]
     ClienteService.Update(
-        req.body.id,
-        req.body.nome,
-        req.body.cpf,
-        req.body.endereco
+        id,
+        nome,
+        cpf,
+        enderecos
     )
     res.redirect("/clientes")
 })
