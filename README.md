@@ -3,7 +3,7 @@
 
 # Descrição:
 
-Node.js é um ambiente de execução JavaScript que permite executar código JavaScript no lado do servidor. Desenvolvido sobre o motor V8 do Google Chrome, Node.js é conhecido por sua eficiência e capacidade de lidar com operações de entrada/saída de forma assíncrona e não bloqueante.
+Node.js é um ambiente de execução JavaScript que permite executar código JavaScript no lado do servidor. Desenvolvido sobre o motor V8 do Google Chrome, Node.js é conhecido por sua eficiência e capacidade de lidar com operações de entrada/saída de forma assíncrona e não bloqueante. Express é um framework web minimalista para Node.js, projetado para facilitar o desenvolvimento de aplicações web e APIs. Ele fornece uma camada robusta de recursos essenciais, mantendo a simplicidade e flexibilidade do Node.js.
 
 ## Principais Características do Node.js
 - Assíncrono e Não Bloqueante: Utiliza um modelo de E/S não bloqueante e orientado a eventos, permitindo alta escalabilidade e eficiência no processamento de múltiplas operações simultâneas.
@@ -19,17 +19,13 @@ Node.js é um ambiente de execução JavaScript que permite executar código Jav
 
 Node.js é amplamente utilizado para construir servidores web, APIs, e aplicações em tempo real, como chats e sistemas de streaming, sendo uma escolha popular para desenvolvedores que buscam alta performance e eficiência.
 
-## Express.js
-
-Express é um framework web minimalista para Node.js, projetado para facilitar o desenvolvimento de aplicações web e APIs. Ele fornece uma camada robusta de recursos essenciais, mantendo a simplicidade e flexibilidade do Node.js.
-
-### Principais Características do Express
+## Principais Características do Express
 - Minimalista e Flexível: Oferece apenas o essencial para a construção de servidores web, permitindo que os desenvolvedores adicionem apenas as funcionalidades necessárias.
 - Middleware: Utiliza uma abordagem de middleware, onde funções intermediárias são executadas em sequência para processar solicitações HTTP.
 - Roteamento: Fornece um sistema de roteamento robusto, que permite a definição de rotas para tratar diferentes tipos de solicitações HTTP.
 - Extensível: Possui uma vasta coleção de middleware e plugins disponíveis, permitindo a fácil integração de funcionalidades adicionais.
 
-### Vantagens do Express
+## Vantagens do Express
 - Simplicidade: Facilita a criação de servidores web com uma interface de programação simples e intuitiva.
 - Rapidez de Desenvolvimento: Permite desenvolvimento rápido e eficiente de aplicações web e APIs.
 - Comunidade e Suporte: Amplamente utilizado e suportado, com uma grande comunidade de desenvolvedores e abundância de recursos e tutoriais.
