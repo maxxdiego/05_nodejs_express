@@ -59,7 +59,13 @@ npm install
 ```bash
 npm start
 ```
-No navegador acessar as aplicações através do localhost:8080.
+No navegador acessar as aplicações através do endereço:
+
+```bash
+http://localhost:8080.
+```
+
+<hr>
 
 # Autor
 
