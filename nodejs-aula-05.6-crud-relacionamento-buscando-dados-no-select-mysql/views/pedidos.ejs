@@ -1,0 +1,76 @@
+<%- include ('partials/header.ejs') %>
+    <%- include ('partials/navbar.ejs') %>
+
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Registrar pedido</h1>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/pedidos/new">
+                        <label>Número do pedido:</label>
+                        <input type="text" name="numero" id="numero" placeholder="Insira o número do pedido"
+                            class="form-control" required>
+
+                        <label>Valor do pedido:</label>
+                        <input type="text" name="valor" id="valor" placeholder="Insira o valor do pedido"
+                            class="form-control" required>
+
+                        <label>Cliente:</label>
+                        <select name="clienteId" id="clienteId" class="form-control" required>
+                            <option value="" selected disabled>Selecione um cliente</option>
+                            <% clientes.forEach(cliente=> { %>
+                                <option value="<%= cliente.id %>">
+                                    <%= cliente.nome %>
+                                </option>
+                                <% }) %>
+                        </select>
+                        <br>
+                        <button class="btn btn-success">Cadastrar</button>
+                    </form>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Pedidos</h1>
+                </div>
+                <div class="card-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Número:</th>
+                                <th>Valor:</th>
+                                <th>Cliente:</th>
+                                <th>Ações:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% pedidos.forEach(pedido=> { %>
+                                <tr>
+                                    <td>
+                                        <%= pedido.numero %>
+                                    </td>
+                                    <td>
+                                        <%= pedido.valor.toLocaleString('pt-br', { style: "currency" , currency: "BRL"
+                                            }) %>
+                                    </td>
+                                    <td>
+                                        <%= pedido.cliente.nome %>
+                                    </td>
+                                    <td><a onclick="return confirm('Deseja mesmo excluir o pedido?')"
+                                            style="color: red; padding: 0;"
+                                            href="/pedidos/delete/<%= pedido.id %>">Excluir</a></td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <%- include ('partials/footer.ejs') %>
